@@ -7,6 +7,7 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import AllArtCraftItems from "../pages/AllArtCraftItems/AllArtCraftItems";
 import MyArtCraftList from "../pages/MyArtCraftList/MyArtCraftList";
+import UpdateDataForm from "../pages/UpdateDataForm/UpdateDataForm";
 
 const router = createBrowserRouter([
     {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
         {
           path: '/myArtCraftList',
           element: <MyArtCraftList></MyArtCraftList>
+        },
+        {
+          path: '/updateDataForm/:id',
+          element: <UpdateDataForm></UpdateDataForm>,
+          loader: ({params}) => fetch(`http://localhost:5000/addCraftItems/${params.id}`)
         }
       ]
     },

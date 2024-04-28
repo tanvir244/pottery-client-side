@@ -5,6 +5,7 @@ import { BiSolidDollarCircle } from "react-icons/bi";
 import PropTypes from 'prop-types';
 import { FaStar } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyArtCraftItem = ({ item, myItems, setMyItems }) => {
     const { _id, itemName, subcategory, description, price, rating, customization, processTime, stock, userName, userEmail, photoURL } = item;
@@ -66,7 +67,9 @@ const MyArtCraftItem = ({ item, myItems, setMyItems }) => {
                         </div>
                     </div>
                     <div className="flex justify-end gap-4 mt-6">
-                        <button className="bg-green-600 text-white py-2 px-6 rounded-lg font-semibold">Update</button>
+                        <Link to={`/updateDataForm/${_id}`}>
+                            <button className="bg-green-600 text-white py-2 px-6 rounded-lg font-semibold">Update</button>
+                        </Link>
                         <button onClick={() => handleDelete(_id)} className="bg-red-600 text-white py-2 px-6 rounded-lg font-semibold">Delete</button>
                     </div>
                 </div>
