@@ -1,0 +1,17 @@
+/* custom css for tooltip effect */
+.tooltip{
+    position: relative;
+}
+.tooltip-text{
+    visibility: hidden;
+    background: #4b5563;
+    color: white;
+    padding: 2px 8px;
+    font-size: 15px;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+.tooltip:hover .tooltip-text{
+    visibility: visible;
+    opacity: 1;
+}

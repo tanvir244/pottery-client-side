@@ -1,6 +1,16 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import './Navbar.css';
 
 const Navbar = () => {
+    const { user, logout } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logout()
+            .then()
+            .catch()
+    }
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -29,14 +39,24 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="tooltip w-12 h-12">
-                        <img className="w-full h-full object-cover rounded-full cursor-pointer mb-2" src="https://i.ibb.co/TmsrwQs/user.png" alt="" />
-                        {/* <div className="tooltip-text w-[130px]">Tanvir</div> */}
-                    </div>
-                    <Link to="/login">
-                        <button className="btn px-8 bg-gray-600 text-white">Login</button>
-                    </Link>
-                    <button className="btn px-4 md:px-8 bg-gray-600 text-white">Sign out</button>
+                    {user ? (
+                            <div className="tooltip w-12 h-12">
+                                <img className="w-full h-full object-cover rounded-full cursor-pointer mb-2" src={user?.photoURL || "https://i.ibb.co/TmsrwQs/user.png"} alt="" />
+                                <div className="tooltip-text w-[130px]">{user.displayName}</div>
+                            </div>
+                        ) : (
+                        <div>
+                            <Link to="/login">
+                                <button className="btn px-8 bg-gray-600 text-white">Login</button>
+                            </Link>
+                            <Link to="/register">
+                                <button className="btn px-8 bg-gray-600 text-white ml-2">Register</button>
+                            </Link>
+                        </div>
+                    )}
+                    {user && (
+                        <button onClick={handleLogout} className="btn px-4 md:px-8 bg-gray-600 text-white ml-4">Logout</button>
+                    )}
                 </div>
             </div>
         </div>
