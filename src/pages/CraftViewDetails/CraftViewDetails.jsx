@@ -17,7 +17,7 @@ const CraftViewDetails = () => {
         <div>
             <Navbar></Navbar>
             <div className="py-12 md:py-16">
-                <div className="w-[90%] md:w-[85%] lg:w-[65%] mx-auto shadow-xl rounded-lg">
+                <div className="w-[90%] md:w-[85%] lg:w-[65%] mx-auto shadow-xl border rounded-lg">
                     <div className="flex flex-col lg:flex-row gap-4">
                         <div className="lg:w-[45%]">
                             <img className="w-full h-full object-cover rounded-t-lg lg:rounded-l-lg" src={photoURL} alt="" />
@@ -35,9 +35,8 @@ const CraftViewDetails = () => {
                                 <h2 className="text-base font-bold"><span className="text-cyan-700">User Name:</span> {userName}</h2>
                                 <h2 className="text-base font-bold"><span className="text-teal-700">User email:</span> {userEmail}</h2>
                                 <div className="flex justify-between pr-4 pt-4">
-                                    <h3 className=" bg-cyan-700 py-1 px-2 font-semibold text-white rounded">Subcategory: {subcategory}</h3>
+                                    <h3 className=" bg-cyan-700 py-1 px-2 font-semibold text-sm text-white rounded">{subcategory}</h3>
                                     <h3 className="flex items-center gap-2 text-2xl font-bold text-red-500"><span className="text-3xl"><BiSolidDollarCircle /></span> {price}</h3>
-
                                 </div>
                             </div>
                         </div>

@@ -5,7 +5,8 @@ import AddCraftItems from "../pages/AddCraftItems/AddCraftItems";
 import CraftViewDetails from "../pages/CraftViewDetails/CraftViewDetails";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
-import MyCartPage from "../pages/MyCartPage/MyCartPage";
+import AllArtCraftItems from "../pages/AllArtCraftItems/AllArtCraftItems";
+import MyArtCraftList from "../pages/MyArtCraftList/MyArtCraftList";
 
 const router = createBrowserRouter([
     {
@@ -35,8 +36,13 @@ const router = createBrowserRouter([
           element: <Register></Register>
         },
         {
-          path: '/myCartPage',
-          element: <MyCartPage></MyCartPage>
+          path: '/allArtCraftItems',
+          element: <AllArtCraftItems></AllArtCraftItems>,
+          loader: () => fetch('http://localhost:5000/addCraftItems')
+        },
+        {
+          path: '/myArtCraftList',
+          element: <MyArtCraftList></MyArtCraftList>
         }
       ]
     },

@@ -1,9 +1,7 @@
-// import { useContext, useEffect, useState } from "react";
 import { useContext } from "react";
 import CraftItem from "../CraftItem/CraftItem";
 import PropTypes from "prop-types";
 import { AuthContext } from "../../provider/AuthProvider";
-// import { AuthContext } from "../../provider/AuthProvider";
 
 const CraftItems = ({ myItems }) => {
     const { user } = useContext(AuthContext);
