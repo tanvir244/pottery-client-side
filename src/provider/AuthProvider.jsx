@@ -35,16 +35,19 @@ const AuthProvider = ({ children }) => {
 
     // Google login 
     const googleLogin = () => {
+        setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
     
     // Github login 
     const githubLogin = () => {
+        setLoading(true);
         return signInWithPopup(auth, githubProvider);
     }
 
     // Twitter login 
     const twitterLogin = () => {
+        setLoading(true);
         return signInWithPopup(auth, twitterProvider);
     }
 
@@ -78,6 +81,7 @@ const AuthProvider = ({ children }) => {
     const userInfo = {
         user,
         loading,
+        setLoading,
         createUser,
         signIn,
         logout,

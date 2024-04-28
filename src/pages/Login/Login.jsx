@@ -4,6 +4,10 @@ import Navbar from "../Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
+// react tostify
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 // react icons
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -13,6 +17,7 @@ import Swal from "sweetalert2";
 const Login = () => {
     const { signIn, googleLogin, githubLogin, twitterLogin } = useContext(AuthContext);
 
+    // login by form manually 
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -37,6 +42,38 @@ const Login = () => {
             console.error(error.message);
         })
         
+    }
+
+    // login by social platfom 
+    const googleLoginn = () => {
+        googleLogin()
+            .then(() => {
+                toast.success("Login successful with Google");
+                // navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error.message);
+            })
+    }
+    const githubLoginn = () => {
+        githubLogin()
+            .then(() => {
+                toast.success("Login successful with Google");
+                // navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error.message);
+            })
+    }
+    const twitterLoginn = () => {
+        twitterLogin()
+            .then(() => {
+                toast.success("Login successful with Google");
+                // navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error.message);
+            })
     }
 
     return (
@@ -67,9 +104,9 @@ const Login = () => {
                         <div className="space-y-4 mt-2">
                             <h3 className="text-center border-b-2 pb-1 text-gray-700 font-semibold">Continue with</h3>
                             <ul className="flex gap-6 justify-center">
-                                <li onClick={() => googleLogin()} className="text-4xl"><button><FaGoogle /></button></li>
-                                <li onClick={() => githubLogin()} className="text-4xl"><button><FaGithub /></button></li>
-                                <li onClick={() => twitterLogin()} className="text-4xl"><button><FaXTwitter /></button></li>
+                                <li onClick={() => googleLoginn()} className="text-4xl"><button><FaGoogle /></button></li>
+                                <li onClick={() => githubLoginn()} className="text-4xl"><button><FaGithub /></button></li>
+                                <li onClick={() => twitterLoginn()} className="text-4xl"><button><FaXTwitter /></button></li>
                             </ul>
                         </div>
                         <p className="mt-6">Dont have an account? <Link className="text-red-500 font-bold" to='/register'>Register</Link></p>

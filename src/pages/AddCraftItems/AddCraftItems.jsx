@@ -5,7 +5,11 @@ import Swal from 'sweetalert2'
 import { AuthContext } from "../../provider/AuthProvider";
 
 const AddCraftItems = () => {
-    const {user} = useContext(AuthContext);
+    const {user, loading} = useContext(AuthContext);
+
+    if(loading){
+        return <p className="text-center mt-12"><span className="loading loading-spinner loading-lg"></span></p>
+    }
 
     const handleAddCraftItems = e => {
         e.preventDefault();
