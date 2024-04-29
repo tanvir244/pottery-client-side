@@ -5,6 +5,8 @@ import ArtAndCraft from "../ArtAndCraft/ArtAndCraft";
 import Footer from "../Footer/Footer";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Traditional from "../Traditional/Traditional";
+import ShowCase from "../ShowCase/ShowCase";
 // import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
@@ -30,6 +32,8 @@ const Home = () => {
                 myItems={myItems}
             ></CraftItems>
             <ArtAndCraft></ArtAndCraft>
+            <ShowCase></ShowCase>
+            <Traditional></Traditional>
             <Footer></Footer>
         </div>
     );

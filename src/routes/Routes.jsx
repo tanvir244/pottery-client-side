@@ -8,11 +8,14 @@ import Login from "../pages/Login/Login";
 import AllArtCraftItems from "../pages/AllArtCraftItems/AllArtCraftItems";
 import MyArtCraftList from "../pages/MyArtCraftList/MyArtCraftList";
 import UpdateDataForm from "../pages/UpdateDataForm/UpdateDataForm";
+import Page404 from "../pages/Page404/Page404";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement: <Page404></Page404>,
       children: [
         {
             path: '/',
@@ -21,11 +24,11 @@ const router = createBrowserRouter([
         },
         {
             path: '/addCraftItems',
-            element: <AddCraftItems></AddCraftItems>
+            element: <PrivateRoute><AddCraftItems></AddCraftItems></PrivateRoute>
         },
         {
           path: '/craftViewDetails/:id',
-          element: <CraftViewDetails></CraftViewDetails>,
+          element: <PrivateRoute><CraftViewDetails></CraftViewDetails></PrivateRoute>,
           loader: () => fetch('http://localhost:5000/addCraftItems') 
         },
         {
@@ -43,7 +46,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/myArtCraftList',
-          element: <MyArtCraftList></MyArtCraftList>
+          element: <PrivateRoute><MyArtCraftList></MyArtCraftList></PrivateRoute>
         },
         {
           path: '/updateDataForm/:id',

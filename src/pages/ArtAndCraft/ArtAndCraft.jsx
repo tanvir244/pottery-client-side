@@ -4,9 +4,9 @@ import { BiSolidDollarCircle } from "react-icons/bi";
 const ArtAndCraft = () => {
 
     return (
-        <div className="max-w-6xl mx-auto my-16">
+        <div className="w-[90%] lg:max-w-6xl mx-auto my-16">
             <h2 className="text-4xl font-bold text-center my-8">Art & Craft Categories</h2>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="card card-compact bg-base-100 shadow-xl">
                     <figure><img className="w-full h-[242px] object-cover" src="https://i.ibb.co/C0yCBxb/Ceramics-and-Pottery-12.jpg" alt="Shoes" /></figure>
                     <div className="card-body">

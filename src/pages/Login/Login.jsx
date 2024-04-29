@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 // react tostify
@@ -11,11 +11,13 @@ import 'react-toastify/dist/ReactToastify.css';
 // react icons
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import Swal from "sweetalert2";
 
 const Login = () => {
-    const { signIn, googleLogin, githubLogin, twitterLogin } = useContext(AuthContext);
+    const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
+    const [loginError, setLoginError] = useState([]);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     // login by form manually 
     const handleLogin = e => {
@@ -23,25 +25,30 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        
+
+        // reset error 
+        setLoginError('');
+
         // sign in
         signIn(email, password)
-        .then(() => {
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "You've Successfully Loged In",
-                showConfirmButton: false,
-                timer: 2000
-              })
-              .then(() => {
-                form.reset();
-              })
-        }) 
-        .catch(error => {
-            console.error(error.message);
-        })
-        
+            .then(() => {
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "You've Successfully Loged In",
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+                    .then(() => {
+                        form.reset();
+                        //navigate after login
+                        navigate(location?.state ? location.state : '/');
+                    })
+            })
+            .catch(() => {
+                setLoginError('Your email or password incorrect, try again');
+            })
+
     }
 
     // login by social platfom 
@@ -49,7 +56,7 @@ const Login = () => {
         googleLogin()
             .then(() => {
                 toast.success("Login successful with Google");
-                // navigate(location?.state ? location.state : '/');
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.error(error.message);
@@ -59,17 +66,7 @@ const Login = () => {
         githubLogin()
             .then(() => {
                 toast.success("Login successful with Google");
-                // navigate(location?.state ? location.state : '/');
-            })
-            .catch(error => {
-                console.error(error.message);
-            })
-    }
-    const twitterLoginn = () => {
-        twitterLogin()
-            .then(() => {
-                toast.success("Login successful with Google");
-                // navigate(location?.state ? location.state : '/');
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.error(error.message);
@@ -101,12 +98,14 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn bg-cyan-700 text-white">Login</button>
                         </div>
+                        {
+                            loginError && <p className="text-red-500 font-semibold text-center">{loginError}</p>
+                        }
                         <div className="space-y-4 mt-2">
                             <h3 className="text-center border-b-2 pb-1 text-gray-700 font-semibold">Continue with</h3>
                             <ul className="flex gap-6 justify-center">
                                 <li onClick={() => googleLoginn()} className="text-4xl"><button><FaGoogle /></button></li>
                                 <li onClick={() => githubLoginn()} className="text-4xl"><button><FaGithub /></button></li>
-                                <li onClick={() => twitterLoginn()} className="text-4xl"><button><FaXTwitter /></button></li>
                             </ul>
                         </div>
                         <p className="mt-6">Dont have an account? <Link className="text-red-500 font-bold" to='/register'>Register</Link></p>

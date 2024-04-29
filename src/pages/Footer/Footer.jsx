@@ -1,3 +1,6 @@
+import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { RxLinkedinLogo } from "react-icons/rx";
 
 const Footer = () => {
     return (
@@ -6,6 +9,14 @@ const Footer = () => {
                 <aside>
                     <h1 className="text-4xl font-bold text-cyan-700">Ceramics <br /> & Pottery</h1>
                     <p className="font-semibold mt-4">ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+                    <div className="space-y-4 mt-6">
+                        <ul className="flex gap-6 justify-center">
+                            <li className="text-4xl"><a href="https://www.linkedin.com/in/hellotanvir4/"><RxLinkedinLogo /></a></li>
+                            <li className="text-4xl"><a href="https://github.com/tanvir244"><FaGithub /></a></li>
+                            <li className="text-4xl"><a href="https://www.facebook.com/tanvirrahman.saim.7"><FaFacebook /></a></li>
+                            <li className="text-4xl"><a href="https://twitter.com/Tanvir339077"><FaXTwitter /></a></li>
+                        </ul>
+                    </div>
                 </aside>
                 <nav>
                     <h6 className="footer-title">Services</h6>
