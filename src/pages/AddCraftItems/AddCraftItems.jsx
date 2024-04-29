@@ -58,9 +58,9 @@ const AddCraftItems = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="bg-[#f0bc8c] py-28">
+            <div className="bg-[#f0bc8c] py-12 md:py-20">
 
-                <div className="w-[70%] mx-auto shadow-2xl bg-base-100 rounded-2xl">
+                <div className="w-[90%] md:w-[85%] lg:w-[70%] mx-auto shadow-2xl bg-base-100 rounded-2xl">
                     <h2 className="text-4xl font-bold text-center pt-12">Add Craft Items</h2>
                     <form onSubmit={handleAddCraftItems} className="card-body">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -16,11 +16,11 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/allArtCraftItems">All Art & craft Items</NavLink></li>
         <li><NavLink to="/addCraftItems">Add Craft Item</NavLink></li>
-        <li><NavLink to="/myArtCraftList">My Art&Craft List</NavLink></li>
+        <li><NavLink to="/myArtCraftList">My Art & Craft List</NavLink></li>
     </>
 
     return (
-        <div className="bg-base-300">
+        <div className="bg-base-300 relative z-10">
             <div className="navbar max-w-6xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -31,7 +31,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a href="/" className="text-xl font-semibold">Ceramics <br /> & Pottery</a>
+                    <a href="/" className="text-xl md:text-2xl font-bold text-cyan-700">Ceramics <br /> & Pottery</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-1 font-semibold">
@@ -45,12 +45,12 @@ const Navbar = () => {
                                 <div className="tooltip-text w-[130px]">{user.displayName}</div>
                             </div>
                         ) : (
-                        <div>
+                        <div className="flex">
                             <Link to="/login">
-                                <button className="btn px-8 bg-gray-600 text-white">Login</button>
+                                <button className="py-2 md:py-3 px-6 md:px-8 rounded font-semibold bg-gray-600 text-white">Login</button>
                             </Link>
                             <Link to="/register">
-                                <button className="btn px-8 bg-gray-600 text-white ml-2">Register</button>
+                                <button className="py-2 md:py-3 px-6 md:px-8 rounded font-semibold bg-gray-600 text-white ml-2">Register</button>
                             </Link>
                         </div>
                     )}

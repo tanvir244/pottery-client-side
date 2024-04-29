@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         {
           path: '/craftViewDetails/:id',
           element: <PrivateRoute><CraftViewDetails></CraftViewDetails></PrivateRoute>,
-          loader: () => fetch('http://localhost:5000/addCraftItems') 
+          loader: () => fetch('http://localhost:5000/addCraftItems')
         },
         {
           path: '/login',
