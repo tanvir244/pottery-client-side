@@ -1,8 +1,14 @@
-# React + Vite
+# Website Name : Ceramics & Pottery
+# Website Link : https://ceramics-and-pottery-auth.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Bullet Points 
+* Implementing a user-friendly responsive UI.
+* Integrating a swiper slider into the banner component.
+* Utilized the React library for improved structural flexibility in implementing React components.
+* Implementing Firebase Authentication to authenticate and authorize users.
+* Employing Node.js as a server and implementing several APIs to handle requests and responses, integrating database functionalities with the client site.
+* Utilizing MongoDB as a database, both manually and functionally inserting data into MongoDB.
+* Primarily using CRUD operations to manage data, including fetching, updating, creating, reading, and deleting operations.
+* Using environment variables to conceal Firebase config keys and MongoDB credentials.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Website Category : Ceramics and Pottery
