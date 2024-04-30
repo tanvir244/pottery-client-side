@@ -53,12 +53,12 @@ const router = createBrowserRouter([
         {
           path: '/updateDataForm/:id',
           element: <UpdateDataForm></UpdateDataForm>,
-          loader: ({params}) => fetch(`https://ceramics-and-pottery-server.vercel.app/${params.id}`)
+          loader: ({params}) => fetch(`https://ceramics-and-pottery-server.vercel.app/addCraftItems/${params.id}`)
         },
         {
           path: '/subCategoryItems/:subcategory',
           element: <SubcategoryItems></SubcategoryItems>,
-          loader: ({params}) => fetch(`https://ceramics-and-pottery-server.vercel.app/${params.subcategory}`)
+          loader: ({params}) => fetch(`https://ceramics-and-pottery-server.vercel.app/subcategory/${params.subcategory}`)
         },
         {
           path: '/subCategoryDetails/:id',

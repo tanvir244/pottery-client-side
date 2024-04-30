@@ -22,7 +22,7 @@ const MyArtCraftItem = ({ item, myItems, setMyItems }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/addCraftItems/${id}`, {
+                fetch(`https://ceramics-and-pottery-server.vercel.app/addCraftItems/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

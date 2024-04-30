@@ -8,12 +8,12 @@ const AllArtCraftItems = () => {
     const allItems = useLoaderData();
     const [allItemsData, setAllItemsData] = useState([]);
     const [loading2, setLoading2] = useState(true);
-
+    console.log(allItems);
     useEffect(() => {
         if(allItems){
             setAllItemsData(allItems);
             setLoading2(false);
-            console.log(allItems);
+            // console.log(allItems);
         }
     }, [allItems])
 
