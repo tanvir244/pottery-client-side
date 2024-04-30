@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: () => fetch('http://localhost:5000/addCraftItems')
+            loader: () => fetch('https://ceramics-and-pottery-server.vercel.app/addCraftItems')
         },
         {
             path: '/addCraftItems',
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         {
           path: '/craftViewDetails/:id',
           element: <PrivateRoute><CraftViewDetails></CraftViewDetails></PrivateRoute>,
-          loader: () => fetch('http://localhost:5000/addCraftItems')
+          loader: () => fetch('https://ceramics-and-pottery-server.vercel.app/addCraftItems')
         },
         {
           path: '/login',
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         {
           path: '/allArtCraftItems',
           element: <AllArtCraftItems></AllArtCraftItems>,
-          loader: () => fetch('http://localhost:5000/addCraftItems')
+          loader: () => fetch('https://ceramics-and-pottery-server.vercel.app/addCraftItems')
         },
         {
           path: '/myArtCraftList',
@@ -53,17 +53,17 @@ const router = createBrowserRouter([
         {
           path: '/updateDataForm/:id',
           element: <UpdateDataForm></UpdateDataForm>,
-          loader: ({params}) => fetch(`http://localhost:5000/addCraftItems/${params.id}`)
+          loader: ({params}) => fetch(`https://ceramics-and-pottery-server.vercel.app/${params.id}`)
         },
         {
           path: '/subCategoryItems/:subcategory',
           element: <SubcategoryItems></SubcategoryItems>,
-          loader: ({params}) => fetch(`http://localhost:5000/subcategory/${params.subcategory}`)
+          loader: ({params}) => fetch(`https://ceramics-and-pottery-server.vercel.app/${params.subcategory}`)
         },
         {
           path: '/subCategoryDetails/:id',
           element: <SubCategoryDetails></SubCategoryDetails>,
-          loader: ({params}) => fetch(`http://localhost:5000/subCategoryDetails/${params.id}`)
+          loader: ({params}) => fetch(`https://ceramics-and-pottery-server.vercel.app/subCategoryDetails/${params.id}`)
         }
       ]
     },

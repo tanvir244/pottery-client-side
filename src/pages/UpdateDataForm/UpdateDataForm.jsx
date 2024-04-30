@@ -33,7 +33,7 @@ const UpdateDataForm = () => {
 
         console.log(updatedCraft);
 
-        fetch(`http://localhost:5000/addCraftItems/${_id}`, {
+        fetch(`https://ceramics-and-pottery-server.vercel.app/addCraftItems/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

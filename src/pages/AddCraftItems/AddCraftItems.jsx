@@ -30,7 +30,7 @@ const AddCraftItems = () => {
         console.log(newCraft);
 
         // sending to database
-        fetch('http://localhost:5000/addCraftItems', {
+        fetch('https://ceramics-and-pottery-server.vercel.app/addCraftItems', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'

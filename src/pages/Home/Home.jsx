@@ -15,7 +15,7 @@ const Home = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/myItems/${user.email}`)
+            fetch(`https://ceramics-and-pottery-server.vercel.app/myItems/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setMyItems(data);
