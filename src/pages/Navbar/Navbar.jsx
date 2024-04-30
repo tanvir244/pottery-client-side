@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import './Navbar.css';
@@ -40,11 +40,11 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {user ? (
-                            <div className="tooltip w-12 h-12">
-                                <img className="w-full h-full object-cover rounded-full cursor-pointer mb-2" src={user?.photoURL || "https://i.ibb.co/TmsrwQs/user.png"} alt="" />
-                                <div className="tooltip-text w-[130px]">{user.displayName}</div>
-                            </div>
-                        ) : (
+                        <div className="tooltip w-12 h-12">
+                            <img className="w-full h-full object-cover rounded-full cursor-pointer mb-2" src={user?.photoURL || "https://i.ibb.co/TmsrwQs/user.png"} alt="" />
+                            <div className="tooltip-text w-[130px]">{user.displayName}</div>
+                        </div>
+                    ) : (
                         <div className="flex">
                             <Link to="/login">
                                 <button className="py-2 md:py-3 px-6 md:px-8 rounded font-semibold bg-gray-600 text-white">Login</button>
