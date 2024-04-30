@@ -12,8 +12,8 @@
 * Using environment variables to conceal Firebase config keys and MongoDB credentials.
 
 # npm packages
-* React_Tooltip
-* Swipper_Slider
-* React_Awesome Reveal
+* react-tooltip
+* swipper-slider
+* react-awesome-reveal
 
 # Website Category : Ceramics and Pottery
