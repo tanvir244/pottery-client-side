@@ -11,4 +11,9 @@
 * Primarily using CRUD operations to manage data, including fetching, updating, creating, reading, and deleting operations.
 * Using environment variables to conceal Firebase config keys and MongoDB credentials.
 
+# npm packages
+* React_Tooltip
+* Swipper_Slider
+* React_Awesome Reveal
+
 # Website Category : Ceramics and Pottery
