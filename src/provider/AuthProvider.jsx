@@ -14,6 +14,7 @@ const twitterProvider = new TwitterAuthProvider();
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [subCategoryData, setSubCategoryData] = useState([]);
 
     // create user 
     const createUser = (email, password) => {
@@ -38,7 +39,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
-    
+
     // Github login 
     const githubLogin = () => {
         setLoading(true);
@@ -88,7 +89,9 @@ const AuthProvider = ({ children }) => {
         updateUserProfile,
         googleLogin,
         githubLogin,
-        twitterLogin
+        twitterLogin,
+        subCategoryData,
+        setSubCategoryData
     }
 
     return (

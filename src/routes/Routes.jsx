@@ -10,6 +10,8 @@ import MyArtCraftList from "../pages/MyArtCraftList/MyArtCraftList";
 import UpdateDataForm from "../pages/UpdateDataForm/UpdateDataForm";
 import Page404 from "../pages/Page404/Page404";
 import PrivateRoute from "./PrivateRoute";
+import SubcategoryItems from "../pages/SubcategoryItems/SubcategoryItems";
+import SubCategoryDetails from "../pages/SubCategoryDetails/SubCategoryDetails";
 
 const router = createBrowserRouter([
     {
@@ -52,6 +54,16 @@ const router = createBrowserRouter([
           path: '/updateDataForm/:id',
           element: <UpdateDataForm></UpdateDataForm>,
           loader: ({params}) => fetch(`http://localhost:5000/addCraftItems/${params.id}`)
+        },
+        {
+          path: '/subCategoryItems/:subcategory',
+          element: <SubcategoryItems></SubcategoryItems>,
+          loader: ({params}) => fetch(`http://localhost:5000/subcategory/${params.subcategory}`)
+        },
+        {
+          path: '/subCategoryDetails/:id',
+          element: <SubCategoryDetails></SubCategoryDetails>,
+          loader: ({params}) => fetch(`http://localhost:5000/subCategoryDetails/${params.id}`)
         }
       ]
     },
