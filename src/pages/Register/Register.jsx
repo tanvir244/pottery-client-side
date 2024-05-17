@@ -60,7 +60,7 @@ const Register = () => {
             <Navbar></Navbar>
             <div className='bg-gray-400 py-16'>
                 <h2 className="text-4xl font-bold text-white text-center mb-6">Register Now</h2>
-                <div className='w-[35%] mx-auto bg-white rounded-2xl'>
+                <div className='w-[92%] md:w-[60%] lg:w-[35%] mx-auto bg-white rounded-2xl'>
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">

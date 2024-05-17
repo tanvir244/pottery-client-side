@@ -27,7 +27,7 @@ const Subcategories = ({ subcategory }) => {
     }
 
     return (
-        <div className="card bg-base-100 shadow-xl w-full h-[230px] mb-5 image-full">
+        <div className="card bg-base-100 shadow-xl w-full image-full">
             <figure><img className="w-full" src={image} alt={subcategory_name} /></figure>
             <div className="card-body">
                 <h2 className="card-title text-2xl text-white font-bold">{subcategory_name}</h2>
