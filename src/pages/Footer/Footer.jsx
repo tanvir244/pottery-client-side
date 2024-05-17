@@ -3,6 +3,8 @@ import { FaXTwitter } from "react-icons/fa6";
 import { RxLinkedinLogo } from "react-icons/rx";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
+import logo from '../../logo.png';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -10,12 +12,23 @@ const Footer = () => {
             <div className="bg-base-200 py-16 md:py-24">
                 <footer className="footer text-base-content w-[90%] md:max-w-6xl mx-auto">
                     <aside>
-                        <h1 data-tip id="webName" className="text-4xl font-bold text-cyan-700">Ceramics <br /> & Pottery</h1>
+                        <Link to='/'>
+                            <div data-tip id="webName" className="w-20 h-18 gap-6">
+                                <img className="w-full h-full rounded-full object-cover" src={logo} alt="" />
+                                <h2 className="text-3xl font-bold">Pottery</h2>
+                                <ReactTooltip
+                                    anchorId="webName"
+                                    place="top"
+                                    content="Website Name is Pottery"
+                                />
+                            </div>
+                        </Link>
+                        {/* <h1 data-tip id="webName" className="text-4xl font-bold text-cyan-700">Ceramics <br /> & Pottery</h1>
                         <ReactTooltip 
                             anchorId="webName"
                             place="top"
                             content="Website Name"
-                        />
+                        /> */}
                         <p className="font-semibold mt-4">Biscut Company Ltd.<br />Providing energy plus biscut since 1947</p>
                         <div className="space-y-4 mt-6">
                             <ul className="flex gap-6 justify-center">
