@@ -1,4 +1,4 @@
-# Website Name : Ceramics & Pottery
+# Website Name : Pottery
 # Website Link : https://ceramics-and-pottery-auth.web.app/
 
 # Bullet Points 
@@ -16,4 +16,3 @@
 * swipper-slider
 * react-awesome-reveal
 
-# Website Category : Ceramics and Pottery
